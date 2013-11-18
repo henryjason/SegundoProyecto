@@ -3,25 +3,31 @@
 <head>
 	<title></title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="http://127.0.0.1/segundoproyecto/css/reset.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="http://127.0.0.1/segundoproyecto/css/style.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="http://127.0.0.1/segundoproyecto/css/grid.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="http://127.0.0.1/segundoproyecto/css/prettyPhoto.css" type="text/css" media="screen">   
-	<script src="http://127.0.0.1/segundoproyecto/js/java/jquery-1.6.3.min.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/cufon-yui.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/cufon-replace.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/Vegur_700.font.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/Vegur_400.font.js" type="text/javascript"></script> 
-	<script src="http://127.0.0.1/segundoproyecto/js/java/FF-cash.js" type="text/javascript"></script> 
-	<script src="http://127.0.0.1/segundoproyecto/js/java/script.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/easyTooltip.js" type="text/javascript" ></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/jquery.easing.1.3.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/hover-image.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/jquery.prettyPhoto.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/query.easing.1.3.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/tms-0.3.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/tms_presets.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java-andrey/java.js" type="text/javascript"></script>
+	<!-- estilo del login -->
+	<link href="js/login/bootstrap.min.css" rel="stylesheet" media="screen"> 
+	<!-- fin estilo del login -->
+	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen">  
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<script src="js/java/jquery-1.6.3.min.js" type="text/javascript"></script>
+	<script src="js/java/cufon-yui.js" type="text/javascript"></script>
+	<script src="js/java/cufon-replace.js" type="text/javascript"></script>
+	<script src="js/java/Vegur_700.font.js" type="text/javascript"></script>
+	<script src="js/java/Vegur_400.font.js" type="text/javascript"></script> 
+	<script src="js/java/FF-cash.js" type="text/javascript"></script> 
+	<script src="js/java/script.js" type="text/javascript"></script>
+	<script src="js/java/easyTooltip.js" type="text/javascript" ></script>
+	<script src="js/java/jquery.easing.1.3.js" type="text/javascript"></script>
+	<script src="js/java/hover-image.js" type="text/javascript"></script>
+	<script src="js/java/jquery.prettyPhoto.js" type="text/javascript"></script>
+	<script src="js/java/jquery.easing.1.3.js" type="text/javascript"></script>
+	<script src="js/java/tms-0.3.js" type="text/javascript" ></script>
+	<script src="js/java/tms_presets.js" type="text/javascript"></script>
+	<script src="js/java-andrey/java.js" type="text/javascript"></script>		
 
 </head>
 <body id="page1">
@@ -30,7 +36,7 @@
 		<header>
 			<div class="main">
 				<div class="bg-1">
-					<h1><a href="index.php">Sistemas Operativo II</a></h1>
+					<h1><a href="index.php">Sistemas Operativo I</a></h1>
 				</div>
 				<nav>
 					<div class="menu-bg-tail">
@@ -52,19 +58,6 @@
 						</div>
 					</div>
 				</nav>
-				<div class="slider-wrapper">
-					<div class="slider">
-						<ul class="items">
-							<li><img src="images/slider-img1.jpg" alt="" /></li>
-							<li>
-								<img src="images/slider-img2.jpg" alt="" />
-							</li>
-							<li>
-								<img src="images/slider-img3.jpg" alt="" />
-							</li>
-						</ul> 
-					</div>
-				</div>
 			</div>
 		</header>
 		<!--==============================content================================-->
@@ -73,24 +66,39 @@
 				<div class="bg-2">
 					<div class="content-padding-1">
 						<div class="container_12">
-							<div class="wrapper">	
-								<?php
-									// requerido para conectar ala base de datos
-								require_once 'connectbd.php';
-		        						// connecting to database
-								$db = new DB_Connect();
-								$db->connect();
+							<div class="wrapper">
+								<div class="container">
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h3 class="panel-title">Please sign in</h3>
+												</div>
+												<div class="panel-body">
+													<form action="main.php" accept-charset="UTF-8" role="form" method="post">
+														<fieldset>
+															<div class="form-group">
 
-								/* se concatene los datos en esta clase y solo se llama al metodo para imprimirlo*/
-								require_once 'employed.php';
-								$employed = new employed();
-								$lista = $employed->home($db);	
-								?>
-								<div class='CSSTableGenerator' >
-									<?php
-									print_r($lista);
-									?>
-								</div><br> 
+																<input class="form-control" placeholder="E-mail" name="email" type="text">
+															</div>
+															<div class="form-group">
+																<input class="form-control" placeholder="Password" name="password" type="password" value="">
+															</div>
+															<div class="checkbox">
+																<label>
+																	<input name="remember" type="checkbox" value="Remember Me"> Remember Me
+																</label>
+															</div>
+															<input class="btn btn-lg btn-success btn-block" type="submit" name="funcion" value="Login">
+														</fieldset>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<script src="js/login/bootstrap.min.js"></script>
+								<script src="js/login/bootstrap.min.js"></script>	
 							</div>
 						</div>
 					</div>

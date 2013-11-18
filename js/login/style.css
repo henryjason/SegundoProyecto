@@ -1,0 +1,18 @@
+#title{
+	position:relative;
+	left: 35%;
+}
+.register{
+	position:static;
+	top:20%;
+	left: 35%;
+	width: 100%;
+}
+.ubicacion_container{
+	background-color:white;
+	position:relative;
+	border-radius: 5px;
+	top:0%;
+	left:35%;
+	width:30%;
+}

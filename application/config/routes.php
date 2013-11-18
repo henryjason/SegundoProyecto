@@ -42,5 +42,14 @@ $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
 
+$route['enrutamiento/reservado.flv'] = "aulas"; 
+
+$route['enrutamiento/wildcard_(:any)'] = "aulas/$1"; 
+
+
+
+
+
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
