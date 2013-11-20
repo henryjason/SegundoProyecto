@@ -4,33 +4,33 @@
 	<title></title>
 	<meta charset="utf-8">
 	<!-- esto es solo parte del register -->
-	<link rel="stylesheet" type="text/css" href="js/login/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>js/login/style.css">
 	<!-- fin de la parte del register -->
 	<!-- este es el estilo del boton -->
-	<link href="js/login/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="<?php echo base_url() ?>js/login/bootstrap.min.css" rel="stylesheet" media="screen">
 	<!-- in del estilo del boton -->
-	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen"> 
+	<link rel="stylesheet" href="<?php echo base_url() ?>css/reset.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?php echo base_url() ?>css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?php echo base_url() ?>css/grid.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?php echo base_url() ?>css/prettyPhoto.css" type="text/css" media="screen"> 
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<script src="js/java/jquery-1.6.3.min.js" type="text/javascript"></script>
-	<script src="js/java/cufon-yui.js" type="text/javascript"></script>
-	<script src="js/java/cufon-replace.js" type="text/javascript"></script>
-	<script src="js/java/Vegur_700.font.js" type="text/javascript"></script>
-	<script src="js/java/Vegur_400.font.js" type="text/javascript"></script> 
-	<script src="js/java/FF-cash.js" type="text/javascript"></script> 
-	<script src="js/java/script.js" type="text/javascript"></script>
-	<script src="js/java/easyTooltip.js" type="text/javascript" ></script>
-	<script src="js/java/jquery.easing.1.3.js" type="text/javascript"></script>
-	<script src="js/java/hover-image.js" type="text/javascript"></script>
-	<script src="js/java/jquery.prettyPhoto.js" type="text/javascript"></script>
-	<script src="js/java/jquery.easing.1.3.js" type="text/javascript"></script>
-	<script src="js/java/tms-0.3.js" type="text/javascript" ></script>
-	<script src="js/java/tms_presets.js" type="text/javascript"></script>
-	<script src="js/java-andrey/java.js" type="text/javascript"></script>		
+	<script src="<?php echo base_url() ?>js/java/jquery-1.6.3.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/cufon-yui.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/cufon-replace.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/Vegur_700.font.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/Vegur_400.font.js" type="text/javascript"></script> 
+	<script src="<?php echo base_url() ?>js/java/FF-cash.js" type="text/javascript"></script> 
+	<script src="<?php echo base_url() ?>js/java/script.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/easyTooltip.js" type="text/javascript" ></script>
+	<script src="<?php echo base_url() ?>js/java/jquery.easing.1.3.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/hover-image.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/jquery.prettyPhoto.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/jquery.easing.1.3.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/tms-0.3.js" type="text/javascript" ></script>
+	<script src="<?php echo base_url() ?>js/java/tms_presets.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java-andrey/java.js" type="text/javascript"></script>		
 
 </head>
 
@@ -49,10 +49,10 @@
 							<div class="container_12">
 								<div class="grid_12">
 									<ul class="menu">
-										<li class="item"><a class="active" href="index.php">Home</a></li>
-										<li><a href="login.php">Login</a></li>
-										<li><a href="Register.php">Register</a></li>
-										<li><a href="">Facebook</a></li>
+										<li class="item"><a class="active" href="<?php echo base_url() ?>aulas">Home</a></li>
+										<li><a href= " <?php echo base_url() ?>aulas/login">Login</a></li>
+										<li><a href="<?php echo base_url() ?>aulas/register">Register</a></li>
+										<li><a href="">Administrar</a></li>
 										<li class="last"><a href="">Contacts</a></li>
 										<li class="item-1"><a href="">Name Pyme</a></li>
 									</ul>
@@ -77,57 +77,67 @@
 									<div class= "ubicacion_container">
 										<div class="container">
 											<div class="row">
-												<form class="form-horizontal"  action="main.php" method="post" >
+												<form class="form-horizontal"  action="<?php echo base_url() ?>aulas/function_register" method="post" >
 													<fieldset>
 														<!-- Address form -->
 
 														<h3 id ="title">Register</h3>
 
-														<!-- name input-->
+														<!-- document input-->
 														<div class="control-group">
-															<label class="control-label">Name:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-															<input id="full-name" name="nombre" type="text" placeholder="Name"
+															<label class="control-label">ID:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<input  name="ID" type="text" placeholder="ID"
 															class="input-xlarge">
 															<p class="help-block"></p>
 														</div><br>
+
+														<!-- name input-->
+														<div class="control-group">
+															<label class="control-label">Name:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+															<input id="full-name" name="name" type="text" placeholder="Name"
+															class="input-xlarge">
+															<p class="help-block"></p>
+														</div><br>
+
+														<!-- last name input-->
+														<div class="control-group">
+															<label class="control-label">Last Name:</label>&nbsp&nbsp&nbsp
+															<input id="lastname" name="last_name" type="text" placeholder="Last Name"
+															class="input-xlarge">
+															<p class="help-block"></p>
+														</div><br>
+
+														<!-- username web-->
+														<div class="control-group">
+															<label class="control-label">Username:</label>&nbsp
+															<input id="user" name="username" type="text" placeholder="Username" class="input-xlarge">	
+														</div><br>
+
 														<!-- Password input-->
 														<div class="control-group">
 															<label class="control-label">Password:</label>&nbsp&nbsp
 															<input id="address-line1" name="password" type="text" placeholder="Password"
 															class="input-xlarge">
 														</div><br>
-														<!-- page web-->
-														<div class="control-group">
-															<label class="control-label">Page web:</label>&nbsp
-															<input id="city" name="page_web" type="text" placeholder="page" class="input-xlarge">	
-														</div><br>
 
-														<!-- categoria input -->
-														<div class="control-group">
-															<label class="control-label">Categoria:</label>&nbsp
-															<select id="country" name="categoria" class="input-xlarge">
-																<option value="" selected="selected">(please select a choose)</option>
-																<option value="Ventas">Ventas</option>
-																<option value="Compras">Compras</option>
-																<option value="Carros">Carros</option>
-																<option value="Muebles">Muebles</option>
-																<option value="Carnes">Carnes</option>
-																<option value="Software">Software</option>
-																<option value="Hardware">Hardware</option>
-																<option value="Articulos">Articulos</option>
-																<option value="Otro">Otro</option>
-															</select>
-														</div><br>
 														<!-- Email input-->
 														<div class="control-group">
 															<label class="control-label">Email:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 															<input id="address-line2" name="email" type="text" placeholder=" Email"	class="input-xlarge">
 														</div><br>
-														<!-- Imagen input-->
+
+														<!-- categoria input -->
 														<div class="control-group">
-															<label class="control-label">Imagen:</label>&nbsp&nbsp&nbsp&nbsp
-															<input id="city" name="imagen" type="text" placeholder="Imagen" class="input-xlarge">	
+															<label class="control-label">Usurio:</label>&nbsp&nbsp&nbsp
+															<select id="country" name="categoria" class="input-xlarge">
+																<option value="" selected="selected">(please select a choose)</option>
+																<option value="Profesor">Profesor</option>
+																<option value="Student">Estudiante</option>
+																<option value="admin">Administrativo</option>
+																
+															</select>
 														</div><br>
+														
 													</fieldset>
 													<input class="btn btn-lg btn-success btn-block" type="submit" name="funcion" value="salvar" id="salvar">
 												</div>
@@ -167,7 +177,7 @@
 										<h3 class="letter">Tutorial <strong>Video</strong></h3>
 
 										<div class="wrapper">
-											<figure class="style-img-2 fleft"><a class="lightbox-image" href="video/video_AS3.swf?width=495&amp;height=275&amp;fileVideo=intro06.flv" data-gal="prettyVideo[prettyVideo]"><img src="images/page1-img2.jpg"  alt=""></a></figure>
+											<figure class="style-img-2 fleft"><a class="lightbox-image" href="<?php echo base_url() ?>video/video_AS3.swf?width=495&amp;height=275&amp;fileVideo=intro06.flv" data-gal="prettyVideo[prettyVideo]"><img src="<?php echo base_url() ?>images/page1-img2.jpg"  alt=""></a></figure>
 										</div>
 									</div>
 								</article>
@@ -190,7 +200,7 @@
 
 		</footer>
 		<script type="text/javascript"> Cufon.now(); </script>
-		<script src="js/login/bootstrap.min.js"></script>
-		<script src="js/login/bootstrap.min.js"></script>
+		<script src="<?php echo base_url() ?>js/login/bootstrap.min.js"></script>
+		<script src="<?php echo base_url() ?>js/login/bootstrap.min.js"></script>
 	</body>
 	</html>

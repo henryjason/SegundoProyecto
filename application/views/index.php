@@ -3,31 +3,59 @@
 <head>
 	<title></title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="http://127.0.0.1/segundoproyecto/css/reset.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="http://127.0.0.1/segundoproyecto/css/style.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="http://127.0.0.1/segundoproyecto/css/grid.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="http://127.0.0.1/segundoproyecto/css/prettyPhoto.css" type="text/css" media="screen">   
-	<script src="http://127.0.0.1/segundoproyecto/js/java/jquery-1.6.3.min.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/cufon-yui.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/cufon-replace.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/Vegur_700.font.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/Vegur_400.font.js" type="text/javascript"></script> 
-	<script src="http://127.0.0.1/segundoproyecto/js/java/FF-cash.js" type="text/javascript"></script> 
-	<script src="http://127.0.0.1/segundoproyecto/js/java/script.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/easyTooltip.js" type="text/javascript" ></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/jquery.easing.1.3.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/hover-image.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/jquery.prettyPhoto.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/query.easing.1.3.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/tms-0.3.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java/tms_presets.js" type="text/javascript"></script>
-	<script src="http://127.0.0.1/segundoproyecto/js/java-andrey/java.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="<?php echo base_url() ?>css/reset.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?php echo base_url() ?>css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?php echo base_url() ?>css/grid.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?php echo base_url() ?>css/prettyPhoto.css" type="text/css" media="screen">   
+	<script src="<?php echo base_url() ?>js/java/jquery-1.6.3.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/cufon-yui.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/cufon-replace.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/Vegur_700.font.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/Vegur_400.font.js" type="text/javascript"></script> 
+	<script src="<?php echo base_url() ?>js/java/FF-cash.js" type="text/javascript"></script> 
+	<script src="<?php echo base_url() ?>js/java/script.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/easyTooltip.js" type="text/javascript" ></script>
+	<script src="<?php echo base_url() ?>js/java/jquery.easing.1.3.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/hover-image.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/jquery.prettyPhoto.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/query.easing.1.3.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/tms-0.3.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/tms_presets.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java-andrey/java.js" type="text/javascript"></script>
+
+
+<script>
+function myFunction()
+{
+alert("Hello World!");
+}
+</script>
+
+		<script>
+
+
+ function login(plogin) {
+
+document.getElementById("login").innerHTML= plogin;
+  
+
+}
+	</script>
+	
 
 </head>
 <body id="page1">
 	<div class="extra">
+
+
 		<!--==============================header=================================-->
 		<header>
+
+
+
+		
+		
+
 			<div class="main">
 				<div class="bg-1">
 					<h1><a href="index.php">Sistemas Operativo II</a></h1>
@@ -38,12 +66,12 @@
 							<div class="container_12">
 								<div class="grid_12">
 									<ul class="menu">
-										<li class="item"><a class="active" href="index.php">Home</a></li>
-										<li><a href="login.php">Login</a></li>
-										<li><a href="Register.php">Register</a></li>
-										<li><a href="">Facebook</a></li>
+										<li class="item"><a class="active" href="<?php echo base_url() ?>aulas">Home</a></li>
+										<li><a href= " <?php echo base_url() ?>aulas/login">Login</a></li>
+										<li><a href="<?php echo base_url() ?>aulas/register">Register</a></li>
+										<li><a href="">Administrar</a></li>
 										<li class="last"><a href="">Contacts</a></li>
-										<li class="item-1"><a href="">Name Pyme</a></li>
+										<li class="item-1"><a  id="login" href="hpl">User</a></li>
 									</ul>
 									<div class="clear"></div>
 								</div>
@@ -55,12 +83,12 @@
 				<div class="slider-wrapper">
 					<div class="slider">
 						<ul class="items">
-							<li><img src="images/slider-img1.jpg" alt="" /></li>
+							<li><img src="<?php echo base_url() ?>images/slider-img1.jpg" alt="" /></li>
 							<li>
-								<img src="images/slider-img2.jpg" alt="" />
+								<img src="<?php echo base_url() ?>images/slider-img2.jpg" alt="" />
 							</li>
 							<li>
-								<img src="images/slider-img3.jpg" alt="" />
+								<img src="<?php echo base_url() ?>images/slider-img3.jpg" alt="" />
 							</li>
 						</ul> 
 					</div>
@@ -74,23 +102,21 @@
 					<div class="content-padding-1">
 						<div class="container_12">
 							<div class="wrapper">	
-								<?php
-									// requerido para conectar ala base de datos
-								require_once 'connectbd.php';
-		        						// connecting to database
-								$db = new DB_Connect();
-								$db->connect();
 
-								/* se concatene los datos en esta clase y solo se llama al metodo para imprimirlo*/
-								require_once 'employed.php';
-								$employed = new employed();
-								$lista = $employed->home($db);	
-								?>
-								<div class='CSSTableGenerator' >
-									<?php
-									print_r($lista);
-									?>
-								</div><br> 
+								<div id="administrador">
+
+									<ul class="menu">
+										<li><a href="">Student</a></li>
+										<li><a href="">Professor</a></li>
+										<li><a href="">administrador</a></li>
+										<li><a href="">Aulas</a></li>
+										<li><a href="">Cursos</a></li>
+										<li><a href="">Grupos</a></li>
+									</ul>
+
+
+								</div>
+
 							</div>
 						</div>
 					</div>
@@ -141,11 +167,37 @@
 			</div>
 			<div class="block"></div>
 		</section>
+
+
+	
+
+
 	</div>
+
+
 	<!--==============================footer=================================-->
 	<footer>
 
 	</footer>
-	<script type="text/javascript"> Cufon.now(); </script>
+	<script type="<?php echo base_url() ?>text/javascript"> Cufon.now(); </script>
+
+
+	<?php if (!isset($login)){
+	
+		echo('<script language="JavaScript" type="text/javascript">alert("Login faile");</script>'); 
+		
+		}else{
+
+			foreach($login as $plogin) {
+
+				$username = "{$plogin['username']}";
+				
+				echo("<script language='JavaScript' type='text/javascript'>document.getElementById('login').innerHTML= '$username';</script>"); 
+
+			} 
+
+			} ?>
+
+
 </body>
 </html>

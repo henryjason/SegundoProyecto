@@ -13,8 +13,65 @@ class Employee_model extends CI_Model {
 		//return $query->result();
 	}
 
-	function insert_employee($employee){
-		$this->db->insert('employed', $employee);
+
+	function login($parametros) {
+
+		$funcion = $parametros['categoria'];
+
+		if($funcion=='Student'){
+             $this->db
+			->select()
+			->from('student')
+			->where('email', $parametros['email'])
+			->where('password', $parametros['password'])
+			->order_by('first_name');
+		$query = $this->db->get();
+		return $query->result_array();
+		}
+		else if($funcion=='Profesor'){
+
+             $this->db
+			->select()
+			->from('professor')
+			->where('email', $parametros['email'])
+			->where('password', $parametros['password'])
+			->order_by('first_name');
+		$query = $this->db->get();
+		return $query->result_array();
+
+
+		}else if($funcion=='administrador'){
+
+             $this->db
+			->select()
+			->from('admin')
+			->where('email', $parametros['email'])
+			->where('password', $parametros['password'])
+			->order_by('first_name');
+		$query = $this->db->get();
+		return $query->result_array();
+        }else{
+        	return 0;
+        }
+
+		
+		//return $query->result();
+	}
+
+
+	function insert_student($pStudent){
+		$this->db->insert('student', $pStudent);
+		return $this->db->insert_id();
+	}
+
+	function insert_profesor($pProfesor){
+		$this->db->insert('professor', $pProfesor);
+		return $this->db->insert_id();
+	}
+
+
+	function insert_admin($pAdmin){
+		$this->db->insert('administrador', $pAdmin);
 		return $this->db->insert_id();
 	}
 

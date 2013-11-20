@@ -5,8 +5,8 @@ mark, rp, rt, ruby, summary, time {display:inline}
 html {width:100%}
 body {font-family:Arial, Helvetica, sans-serif;font-size:100%;color:#a1a1a1;min-width:960px;background:#000}
 .ic {border:0;float:right;background:#fff;color:#f00;width:50%;line-height:10px;font-size:10px;margin:-220% 0 0 0;overflow:hidden;padding:0}
-.bg-1 {width:100%; background:url(../images/bg-top.png) no-repeat center top; min-height:131px}
-.bg-2 {width:100%; background:url(../images/bg-2-tail.gif) repeat center top; border-radius:3px}
+.bg-1 {width:100%; background:url(http://127.0.0.1/segundoproyecto/images/bg-top.png) no-repeat center top; min-height:131px}
+.bg-2 {width:100%; background:url(http://127.0.0.1/segundoproyecto/images/bg-2-tail.gif) repeat center top; border-radius:3px}
 .main {
 	width:960px; 	
 	padding:0;
@@ -103,8 +103,8 @@ h1 a {
 	text-indent:-5000px; 
 	
 }
-.menu-bg-tail {background:url(../images/menu-bg-tail.gif) repeat-x center top; width:100%}
-.menu-bg {background:url(../images/menu-bg.jpg) no-repeat center top; width:100%}
+.menu-bg-tail {background:url(http://127.0.0.1/segundoproyecto/images/menu-bg-tail.gif) repeat-x center top; width:100%}
+.menu-bg {background:url(http://127.0.0.1/segundoproyecto/images/menu-bg.jpg) no-repeat center top; width:100%}
 .menu {
 	padding:10px 0 10px 0; 
 	width:100%;
@@ -114,7 +114,7 @@ h1 a {
 .menu li {
 	float:left; 
 	position:relative;
-	background:url(../images/menu-li-line.png) no-repeat left top;
+	background:url(http://127.0.0.1/segundoproyecto/images/menu-li-line.png) no-repeat left top;
 	padding:5px 33px 0 34px;
 }
 .menu li.item {background:none; padding-left:46px}
@@ -196,9 +196,9 @@ h6 {
 	float:left;
 	margin-right:16px;
 	}
-.time-stule-1 {background:url(../images/marker-text-1.png) no-repeat 1px top}
-.time-stule-2 {background:url(../images/marker-text-2.png) no-repeat 1px top}
-.time-stule-3 {background:url(../images/marker-text-3.png) no-repeat 1px top}
+.time-stule-1 {background:url(http://127.0.0.1/segundoproyecto/images/marker-text-1.png) no-repeat 1px top}
+.time-stule-2 {background:url(http://127.0.0.1/segundoproyecto/images/marker-text-2.png) no-repeat 1px top}
+.time-stule-3 {background:url(http://127.0.0.1/segundoproyecto/images/marker-text-3.png) no-repeat 1px top}
 .text-1,
 .text-3,
 .text-5 {
@@ -244,7 +244,7 @@ h6 {
 	.list-2 li span {
 		display:inline-block;
 		width:21px;
-		background:url(../images/list-2-line.gif) no-repeat right -1px;
+		background:url(http://127.0.0.1/segundoproyecto/images/list-2-line.gif) no-repeat right -1px;
 		margin-right:15px;
 		float:left;
 	}
@@ -252,7 +252,7 @@ h6 {
 		display:block;
 		width:5px;
 		height:10px;
-		background:url(../images/list-2-marker.gif) no-repeat center -50px;
+		background:url(http://127.0.0.1/segundoproyecto/images/list-2-marker.gif) no-repeat center -50px;
 		float:right;
 		}
 	.list-2 li a.left-list {background-position:left 0; float:left}
@@ -263,7 +263,7 @@ h6 {
 	display:block;
 	width:73px;
 	height:12px;
-	background:url(../images/marker-1.png) left top;
+	background:url(http://127.0.0.1/segundoproyecto/images/marker-1.png) left top;
 	}
 .link-2.link-style1 {background-position:-300px 0}
 .link-2.link-style2 {background-position:-620px 0}
@@ -271,7 +271,7 @@ h6 {
 .list-3 li {
 	font-size:13px;
 	line-height:20px;
-	background:url(../images/list-3-marker.gif) no-repeat left 12px;
+	background:url(http://127.0.0.1/segundoproyecto/images/list-3-marker.gif) no-repeat left 12px;
 	padding:5px 0 5px 12px;
 }
 	.list-3 li a {
@@ -353,7 +353,7 @@ div.nav-controls a {
 	bottom:-31px;
 	z-index:11;
 	color:#f6f7f6;
-	background:url(../images/button-bg.png) no-repeat left top;
+	background:url(http://127.0.0.1/segundoproyecto/images/button-bg.png) no-repeat left top;
 }
  div.nav-controls a.prev {left:18px;
 }
@@ -535,7 +535,7 @@ div.nav-controls a {
 		top:0;
 		width:100%;
 		height:100%;
-		background:url(../images/magnify.png) no-repeat 50% 50%;
+		background:url(http://127.0.0.1/segundoproyecto/images/magnify.png) no-repeat 50% 50%;
 		z-index:2;
 		padding:0;
 	}
@@ -602,7 +602,7 @@ footer {
 	color:#fff;
 	overflow:hidden;
 }
-.footer-bg {width:100%; background:url(../images/footer-bg.jpg) no-repeat -1px top; min-height:104px}
+.footer-bg {width:100%; background:url(http://127.0.0.1/segundoproyecto/images/footer-bg.jpg) no-repeat -1px top; min-height:104px}
 .footer-padding {padding:28px 80px 0 29px}
 .footer-link {
 	font-size:14px;
@@ -632,7 +632,7 @@ footer {
 			display:inline-block;
 			width:51px;
 			height:51px;
-			background:url(../images/list-services.png) no-repeat left top;
+			background:url(http://127.0.0.1/segundoproyecto/images/list-services.png) no-repeat left top;
 		}
 		.list-services li a.n-1 {background-position:0 0px}
 		.list-services li a.n-2 {background-position:-55px 0}

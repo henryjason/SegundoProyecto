@@ -42,7 +42,7 @@ $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
 
-$route['enrutamiento/reservado.flv'] = "aulas"; 
+$route['enrutamiento/reservado.rar'] = "aulas"; 
 
 $route['enrutamiento/wildcard_(:any)'] = "aulas/$1"; 
 

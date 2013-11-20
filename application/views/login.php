@@ -3,31 +3,28 @@
 <head>
 	<title></title>
 	<meta charset="utf-8">
-	<!-- estilo del login -->
-	<link href="js/login/bootstrap.min.css" rel="stylesheet" media="screen"> 
-	<!-- fin estilo del login -->
-	<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="css/grid.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen">  
+	<link rel="stylesheet" href="<?php echo base_url() ?>css/reset.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?php echo base_url() ?>css/style.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?php echo base_url() ?>css/grid.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?php echo base_url() ?>css/prettyPhoto.css" type="text/css" media="screen">   
+	<script src="<?php echo base_url() ?>js/java/jquery-1.6.3.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/cufon-yui.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/cufon-replace.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/Vegur_700.font.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/Vegur_400.font.js" type="text/javascript"></script> 
+	<script src="<?php echo base_url() ?>js/java/FF-cash.js" type="text/javascript"></script> 
+	<script src="<?php echo base_url() ?>js/java/script.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/easyTooltip.js" type="text/javascript" ></script>
+	<script src="<?php echo base_url() ?>js/java/jquery.easing.1.3.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/hover-image.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/jquery.prettyPhoto.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/query.easing.1.3.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/tms-0.3.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java/tms_presets.js" type="text/javascript"></script>
+	<script src="<?php echo base_url() ?>js/java-andrey/java.js" type="text/javascript"></script>	
+	<link href="<?php echo base_url() ?>js/login/bootstrap.min.css" rel="stylesheet" media="screen"> 
+	<script src="<?php echo base_url() ?>js/login/bootstrap.min.js"></script>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<script src="js/java/jquery-1.6.3.min.js" type="text/javascript"></script>
-	<script src="js/java/cufon-yui.js" type="text/javascript"></script>
-	<script src="js/java/cufon-replace.js" type="text/javascript"></script>
-	<script src="js/java/Vegur_700.font.js" type="text/javascript"></script>
-	<script src="js/java/Vegur_400.font.js" type="text/javascript"></script> 
-	<script src="js/java/FF-cash.js" type="text/javascript"></script> 
-	<script src="js/java/script.js" type="text/javascript"></script>
-	<script src="js/java/easyTooltip.js" type="text/javascript" ></script>
-	<script src="js/java/jquery.easing.1.3.js" type="text/javascript"></script>
-	<script src="js/java/hover-image.js" type="text/javascript"></script>
-	<script src="js/java/jquery.prettyPhoto.js" type="text/javascript"></script>
-	<script src="js/java/jquery.easing.1.3.js" type="text/javascript"></script>
-	<script src="js/java/tms-0.3.js" type="text/javascript" ></script>
-	<script src="js/java/tms_presets.js" type="text/javascript"></script>
-	<script src="js/java-andrey/java.js" type="text/javascript"></script>		
 
 </head>
 <body id="page1">
@@ -44,10 +41,10 @@
 							<div class="container_12">
 								<div class="grid_12">
 									<ul class="menu">
-										<li class="item"><a class="active" href="index.php">Home</a></li>
-										<li><a href="login.php">Login</a></li>
-										<li><a href="Register.php">Register</a></li>
-										<li><a href="">Facebook</a></li>
+										<li class="item"><a class="active" href="<?php echo base_url() ?>aulas">Home</a></li>
+										<li><a href= " <?php echo base_url() ?>aulas/login">Login</a></li>
+										<li><a href="<?php echo base_url() ?>aulas/register">Register</a></li>
+										<li><a href="">Administrar</a></li>
 										<li class="last"><a href="">Contacts</a></li>
 										<li class="item-1"><a href="">Name Pyme</a></li>
 									</ul>
@@ -68,6 +65,9 @@
 						<div class="container_12">
 							<div class="wrapper">
 								<div class="container">
+										<link href="<?php echo base_url() ?>js/login/bootstrap.min.css" rel="stylesheet" media="screen"> 
+	                                    <script src="<?php echo base_url() ?>js/login/bootstrap.min.js"></script>
+
 									<div class="row">
 										<div class="col-md-4 col-md-offset-4">
 											<div class="panel panel-default">
@@ -75,7 +75,7 @@
 													<h3 class="panel-title">Please sign in</h3>
 												</div>
 												<div class="panel-body">
-													<form action="main.php" accept-charset="UTF-8" role="form" method="post">
+													<form action="<?php echo base_url() ?>aulas/login" accept-charset="UTF-8" role="form" method="post">
 														<fieldset>
 															<div class="form-group">
 
@@ -84,11 +84,19 @@
 															<div class="form-group">
 																<input class="form-control" placeholder="Password" name="password" type="password" value="">
 															</div>
-															<div class="checkbox">
-																<label>
-																	<input name="remember" type="checkbox" value="Remember Me"> Remember Me
-																</label>
-															</div>
+
+															<!-- categoria input -->
+														<div class="control-group">
+															<label class="control-label">Usurio:</label>&nbsp&nbsp&nbsp
+															<select id="country" name="categoria" class="input-xlarge">
+																<option value="" selected="selected">(please select a choose)</option>
+																<option value="Profesor">Profesor</option>
+																<option value="Student">Estudiante</option>
+																<option value="admin">Administrativo</option>
+																
+															</select>
+														</div><br>
+
 															<input class="btn btn-lg btn-success btn-block" type="submit" name="funcion" value="Login">
 														</fieldset>
 													</form>
@@ -97,8 +105,7 @@
 										</div>
 									</div>
 								</div>
-								<script src="js/login/bootstrap.min.js"></script>
-								<script src="js/login/bootstrap.min.js"></script>	
+									
 							</div>
 						</div>
 					</div>
@@ -132,7 +139,7 @@
 									<h3 class="letter">Tutorial <strong>Video</strong></h3>
 
 									<div class="wrapper">
-										<figure class="style-img-2 fleft"><a class="lightbox-image" href="video/video_AS3.swf?width=495&amp;height=275&amp;fileVideo=intro06.flv" data-gal="prettyVideo[prettyVideo]"><img src="images/page1-img2.jpg"  alt=""></a></figure>
+										<figure class="style-img-2 fleft"><a class="lightbox-image" href="<?php echo base_url() ?>video/video_AS3.swf?width=495&amp;height=275&amp;fileVideo=intro06.flv" data-gal="prettyVideo[prettyVideo]"><img src="images/page1-img2.jpg"  alt=""></a></figure>
 									</div>
 								</div>
 							</article>
