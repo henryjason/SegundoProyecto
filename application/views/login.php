@@ -26,6 +26,7 @@
 	<script src="<?php echo base_url() ?>js/login/bootstrap.min.js"></script>
 
 
+
 </head>
 <body id="page1">
 	<div class="extra">
@@ -65,8 +66,7 @@
 						<div class="container_12">
 							<div class="wrapper">
 								<div class="container">
-										<link href="<?php echo base_url() ?>js/login/bootstrap.min.css" rel="stylesheet" media="screen"> 
-	                                    <script src="<?php echo base_url() ?>js/login/bootstrap.min.js"></script>
+										
 
 									<div class="row">
 										<div class="col-md-4 col-md-offset-4">

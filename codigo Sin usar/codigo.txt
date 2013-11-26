@@ -1,0 +1,52 @@
+Este es un auto comple
+
+<script>
+  $(function(){
+
+	<?php if (!isset($login)){
+		
+		}else{
+               
+        foreach($login as $plogin) {
+
+   	$username = "{$plogin['username']}";
+
+   
+?>
+   	var availableTags = [
+   	"hola",
+   	"<?php echo $username ?>"
+      
+      
+    ];
+
+
+		<?php	}   }?>
+
+
+   
+
+    $( "#id2no" ).autocomplete({
+      source: availableTags
+    });
+
+
+  });
+
+
+  $(function() {
+
+    var name = [
+      "henry",
+      "Cordero",
+      "Jason"
+      
+    ];
+
+    $( "#name2" ).autocomplete({
+      source: name
+    });
+
+    });
+
+  </script>

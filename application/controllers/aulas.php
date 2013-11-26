@@ -6,6 +6,8 @@ class aulas extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model('employee_model');
+	    
+
 	}
 
 	function index() {
@@ -35,12 +37,23 @@ class aulas extends CI_Controller {
 
 	}
 
+	
 
 
-	function register() {
-		
-		$this->load->view('register');
+	function get_user($type) {
+
+	           
+				$data['user'] = $this->employee_model->get_user($type);
+				 
+				echo json_encode($data['user']) ;
+
+              //echo "<pre>";print_r($data);echo"</pre>";
+                
+
 	}
+
+
+
 
     function function_login() {
 		
@@ -53,6 +66,13 @@ class aulas extends CI_Controller {
                 // redirect(base_url().'aulas');
                 
 		    }
+	}
+
+
+
+	function register() {
+		
+		$this->load->view('register');
 	}
 
 
@@ -102,31 +122,23 @@ class aulas extends CI_Controller {
 
 	}
 
-
-	function insert() {
+   function cargarFormulario() {
+		
+		
 
 		if($_POST) {
 
-			$data = array(
-				'nombre' => $_POST['first_name'],
-				'apellido' => $_POST['last_name'],
-				'genero' => $_POST['genre'],
-				'notificacion' => $_POST['notify']
-			);
-			//echo "<pre>";print_r($data);echo"</pre>";
-			$this->employee_model->insert_employee($data);
-			redirect(base_url().'employees/');
-		} else {
-			$this->load->view('employee_create');
-		}
+	            //redirect(base_url().'aulas');
+				$data['login'] = $this->employee_model->login($_POST);
+				$this->load->view('index', $data); 
+              // echo "<pre>";print_r($data);echo"</pre>";
+                
+		    }else{$this->load->view('login');}
+
 	}
 
-	function vista() {
 
-		
-			$this->load->view('style');
-	
-	}
+
 
 
 
