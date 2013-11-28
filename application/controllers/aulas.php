@@ -42,16 +42,69 @@ class aulas extends CI_Controller {
 
 	function get_user($type) {
 
+		$plike = $_POST['source1'];
+
+                  
 	           
-				$data['user'] = $this->employee_model->get_user($type);
+			$data['user'] = $this->employee_model->get_user($type, $plike);
 				 
-				echo json_encode($data['user']) ;
+			echo json_encode($data['user']) ;
 
               //echo "<pre>";print_r($data);echo"</pre>";
                 
 
 	}
 
+
+
+	function eliminar_user($type) {
+
+		$document_number = $_POST['source1'];
+
+                  
+	           
+			$data = $this->employee_model->eliminar_user($type, $document_number);
+				 
+			echo "$data";
+
+             //echo "<pre>";print_r($data);echo"</pre>";
+                
+
+	}
+
+
+	function registrar_user($type) {
+
+		if($_POST) {
+
+	        $data = $this->employee_model->registrar_user($type, $_POST);
+				 
+			echo "$data";
+                
+		    }
+			
+
+             //echo "<pre>";print_r($data);echo"</pre>";
+                
+
+	}
+
+
+function actualizar_user($type) {
+
+		if($_POST) {
+
+	        $data = $this->employee_model->actualizar_user($type, $_POST);
+				 
+			echo "$data";
+                
+		    }
+			
+
+             //echo "<pre>";print_r($data);echo"</pre>";
+                
+
+	}
 
 
 

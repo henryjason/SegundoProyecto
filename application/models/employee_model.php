@@ -60,12 +60,15 @@ class Employee_model extends CI_Model {
 		//return $query->result();
 	}
 
-function get_user($type) {
+
+function get_user($type, $pLike) {
 
 		if($type =='Student'){
              $this->db
 			->select()
 			->from('student')
+			->limit(10, 0)
+			->where("document_number LIKE '%$pLike%'")
 			->order_by('first_name');
 		$query = $this->db->get();
 		return $query->result_array();
@@ -76,6 +79,8 @@ function get_user($type) {
              $this->db
 			->select()
 			->from('professor')
+			->limit(10, 0)
+			->where("document_number LIKE '%$pLike%'")
 			->order_by('first_name');
 		$query = $this->db->get();
 		return $query->result_array();
@@ -86,6 +91,8 @@ function get_user($type) {
              $this->db
 			->select()
 			->from('administrador')
+			->limit(10, 0)
+			->where("document_number LIKE '%$pLike%'")
 			->order_by('first_name');
 		$query = $this->db->get();
 		return $query->result_array();
@@ -97,7 +104,124 @@ function get_user($type) {
 		//return $query->result();
 	}
 
+
+function eliminar_user($type, $pid) {
+
+		if($type =='Student'){
+
+			$query = $this->db->delete('student', array('document_number' => $pid));
+
+			if($query){
+
+				return 1;
+			}else{
+				return 0;
+			}
+
+
+		}
+
+		else if($type=='Profesor'){
+
+			$query = $this->db->delete('professor', array('document_number' => $pid));
+
+			if($query){
+
+				return 1;
+			}else{
+				return 0;
+			}
+
+		}else if($type=='admin'){
+
+			$query = $this->db->delete('administrador', array('document_number' => $pid));
+
+			if($query){
+
+				return 1;
+			}else{
+				return 0;
+			}
+
+}
+		
+		//return $query->result();
+	}
+
 	
+function registrar_user($type, $parametros) {
+
+	$data = array(
+				'document_number' => $parametros['ID'],
+				'first_name' => $parametros['name'],
+				'last_name' => $parametros['last_name'],
+				'password' => $parametros['password'],
+				'username' => $parametros['username'],
+				'email' => $parametros['email'],
+				'created_at' => date("d-m-Y h:i:s")
+
+			);
+
+		if($type =='Student'){
+
+			$this->db->insert('student', $data);
+		    return $this->db->insert_id();
+
+
+		}
+
+		else if($type=='Profesor'){
+
+			$this->db->insert('professor', $data);
+		return $this->db->insert_id();
+
+		}else if($type=='admin'){
+
+		$this->db->insert('administrador', $data);
+		return $this->db->insert_id();
+
+}else{return 0;}
+		
+		//return $query->result();
+	}
+
+
+    function actualizar_user($type, $parametros) {
+       $data = array(
+				'document_number' => $parametros['ID'],
+				'first_name' => $parametros['name'],
+				'last_name' => $parametros['last_name'],
+				'password' => $parametros['password'],
+				'username' => $parametros['username'],
+				'email' => $parametros['email'],
+				'updated_at' => date("d-m-Y h:i:s")
+
+			);
+
+       if($type =='Student'){
+
+			
+        $this->db->where('document_number', $parametros['ID']);
+        return $this->db->update('student', $data);
+
+		}
+
+		else if($type=='Profesor'){
+
+		 $this->db->where('document_number', $parametros['ID']);
+        return $this->db->update('professor', $data);
+
+		}else if($type=='admin'){
+
+		 $this->db->where('document_number', $parametros['ID']);
+        return $this->db->update('administrador', $data);
+
+}else{return 0;}
+
+
+    }
+
+
 
 
 	function insert_student($pStudent){

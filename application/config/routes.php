@@ -44,9 +44,9 @@ $route['404_override'] = '';
 
 $route['enrutamiento/reservado.rar'] = "aulas"; 
 
-$route['enrutamiento/wildcard_(:any)'] = "aulas/$1"; 
+$route['enrutamiento/wildcard_(:any)'] = "aulas/$1";
 
-
+$route['aulas/get_user/_(:any)/_(:any)'] = "aulas/get_user/$1/$1";
 
 
 
