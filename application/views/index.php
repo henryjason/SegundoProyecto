@@ -46,12 +46,6 @@
 	<script>
 
 
-	function login(plogin) {
-
-		document.getElementById("login").innerHTML= plogin;
-
-
-	}
 	</script>
 	
 
@@ -107,10 +101,10 @@
 								<div id="administrador">
 
 									<ul class="menu">
-										<li><a href="">Usuarios</a></li>
-										<li><a href="">Aulas</a></li>
-										<li><a href="">Cursos</a></li>
-										<li><a href="">Grupos</a></li>
+										<li><a id="menu_usuario">Usuarios</a></li>
+										<li><a id="menu_cursos">Cursos</a></li>
+										<li><a id="menu_aulas">Aulas</a></li>
+										<li><a id="menu_grupos">Grupos</a></li>
 									</ul><br> 
 
 									<div id="Usuario">
@@ -220,27 +214,199 @@
 
 
 
-                                    <div id="aulas">
+									<div id="aulas">
 
-                                    	Hola Aulas
-
-
-                                    </div>
+										Hola Aulas
 
 
-                                    <div id="Cursos">
-
-                                    	Hola cursos
+									</div>
 
 
-                                    </div>
+									<div id="Cursos">
 
-                                    <div id="grupos">
-
-                                    	Hola grupos
+										<div class="container">
 
 
-                                    </div>
+											<div class="row">
+
+
+												<div class="col-md-4 col-md-offset-4">
+
+
+													<div class="panel panel-default">
+
+
+
+														<div class="panel-heading">
+															<h3 class="panel-title">Gestion de cursos</h3>
+														</div>
+														<div class="panel-body">
+
+
+
+
+															<form class="form-horizontal"  action="<?php echo base_url() ?>aulas/function_register" method="post" >
+																<fieldset>
+
+
+																	<!-- document input-->
+																	<div class="control-group">
+																		
+																		Code : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input id="code_curso" type="text" placeholder="Code Curso"
+																		class="input-xlarge"><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button"  value="Obtener" id="obtener_curso" >
+																		<p class="help-block"></p>
+																	</div><br>
+
+
+																	<!-- name input-->
+																	<div class="control-group">
+																	
+																		Name: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input id="name_curso"  type="text" placeholder="Nombre Curso"
+																		class="input-xlarge">
+																		<p class="help-block"></p>
+																	</div><br>
+
+																	<!-- last name input-->
+																	<div class="control-group">
+																		
+																		descripción: <input id="description_curso" type="text" placeholder="Descripcion"
+																		class="input-xlarge">
+																		<p class="help-block"></p>
+																	</div><br>
+
+																	
+																</fieldset>
+																<input  type="button"  value="Registrar" id="curso_registrar">
+																<input  type="button"  value="Editar" id="curso_editar">
+																<input  type="button"  value="Eliminar" id="curso_eliminar">
+																
+															</form>
+
+
+
+														</div>
+													</div>
+												</div> <!--<div class="col-md-4 col-md-offset-4">-->
+
+
+
+
+
+											</div>
+
+										</div>	<!--contenedor cursos-->
+
+
+									</div>  <!--fin del div cursos-->
+
+
+									<div id="grupos">
+
+										<div class="container">
+
+
+											<div class="row">
+
+
+												<div class="col-md-4 col-md-offset-4">
+
+
+													<div class="panel panel-default">
+
+
+
+														<div class="panel-heading">
+															<h3 class="panel-title">Gestion de Grupos</h3>
+														</div>
+														<div class="panel-body">
+
+
+
+
+															<form class="form-horizontal"  action="<?php echo base_url() ?>aulas/function_register" method="post" >
+																<fieldset>
+
+
+																	<!-- document input-->
+																	<div class="control-group">
+																		
+																		Buscar Grupo: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input id="Busqueda_Grupo" type="text" placeholder="serch word"
+																		class="input-xlarge"><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button"  value="Obtener" id="obtener_grupo" >
+																		<p class="help-block"></p>
+																	</div><br>
+
+																	<!-- categoria input -->
+																	<div class="control-group">
+																		
+																		Cuatrimestre: &nbsp<select id="quarter" class="input-xlarge">
+																			<option value="" selected="selected">(please select a choose)</option>
+																			<option value="I">Primer Cuatrimestre</option>
+																			<option value="II">Segundo Cuatrimestre</option>
+																			<option value="III">Tercer Cuatrimestre</option>
+																			
+
+																		</select>
+																	</div><br>
+
+
+
+																	<!-- document input-->
+																	<div class="control-group">
+																		
+																		ID Curso: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input id="id_curso_grupo" type="text" placeholder="ID Curso"
+																		class="input-xlarge">
+																		<p class="help-block"></p>
+																	</div><br>
+
+
+																	<!-- name input-->
+																	<div class="control-group">
+																	
+																		Profesor: &nbsp&nbsp&nbsp<input id="id_prof_grupo"  type="text" placeholder="ID Profesor"
+																		class="input-xlarge">
+																		<p class="help-block"></p>
+																	</div><br>
+
+																	<!-- last name input-->
+																	<div class="control-group">
+																		
+																		# Grupo: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input id="number_grupo" type="text" placeholder="# del Grupo"
+																		class="input-xlarge">
+																		<p class="help-block"></p>
+																	</div><br>
+
+
+																	<!-- username web-->
+																	<div class="control-group">
+																		
+																		Enable: &nbsp&nbsp&nbsp&nbsp&nbsp<input type = "checkbox"  id = "enable_grupo" value = "habilitado" checked = "checked" />	
+																	</div><br>
+
+																	
+																</fieldset>
+																<input  type="button" name="funcion_editar" value="Registrar" id="grupo_registrar">
+																<input  type="button" name="funcion_editar" value="Editar" id="grupo_editar">
+																<input  type="button" name="funcion_editar" value="Eliminar" id="grupo_eliminar">
+																
+															</form>
+
+
+
+														</div>
+													</div>
+												</div> <!--<div class="col-md-4 col-md-offset-4">-->
+
+
+
+
+
+											</div>
+
+										</div>	<!--contenedor grupos-->
+
+
+									</div>  <!--fin div grupo-->
+
 
 
 
@@ -276,9 +442,44 @@
 
 		<script>
 
+		$( "#menu_usuario" ).click(function() {
+
+			document.getElementById('Usuario').style.display = '';
+			document.getElementById('aulas').style.display = 'none'; 
+			document.getElementById('Cursos').style.display = 'none'; 
+			document.getElementById('grupos').style.display = 'none'; 
+
+		});
 
 
 
+		$( "#menu_cursos" ).click(function() {
+
+			document.getElementById('Usuario').style.display = 'none';
+			document.getElementById('aulas').style.display = 'none'; 
+			document.getElementById('Cursos').style.display = ''; 
+			document.getElementById('grupos').style.display = 'none'; 
+
+		});
+
+		$( "#menu_aulas" ).click(function() {
+
+			document.getElementById('Usuario').style.display = 'none';
+			document.getElementById('aulas').style.display = ''; 
+			document.getElementById('Cursos').style.display = 'none'; 
+			document.getElementById('grupos').style.display = 'none'; 
+
+		});
+
+
+		$( "#menu_grupos" ).click(function() {
+
+			document.getElementById('Usuario').style.display = 'none';
+			document.getElementById('aulas').style.display = 'none'; 
+			document.getElementById('Cursos').style.display = 'none'; 
+			document.getElementById('grupos').style.display = ''; 
+
+		});
 
 
 		$("#id2").on('keyup', function () {
@@ -297,6 +498,7 @@
 
 
 					var parsedJSON = eval('('+data+')');
+
 
 
 
@@ -321,7 +523,6 @@
 							source: array_id
 
 						});
-
 
 
 						$("#button_obtener").on("click", function () {
@@ -482,8 +683,379 @@
 	</script>
 
 
+	<script>
+
+
+			$("#code_curso, #id_curso_grupo").on('keyup', function () {
+
+			var array_code = [];
+
+			$.ajax({
+				type: 'POST',
+				url: '<?php echo base_url() ?>aulas/get_curso',
+				data: {
+					source1: document.getElementById('code_curso').value
+				},
+
+				success: function( data ) {
+
+
+					var JSONCurso = eval('('+data+')');
+
+
+
+
+					$(function() {
+
+
+
+
+						for (var i = JSONCurso.length - 1; i >= 0; i--) {
+
+
+
+
+							array_code[i] = JSONCurso[i].code;
+
+
+						};
+
+
+						$( "#code_curso, #id_curso_grupo" ).autocomplete({
+
+							source: array_code
+
+						});
+
+
+
+						$("#obtener_curso").on("click", function () {
+
+
+							for (var i = JSONCurso.length - 1; i >= 0; i--) {
+
+
+								if(document.getElementById('code_curso').value == JSONCurso[i].code){
+
+									document.getElementById('name_curso').value = JSONCurso[i].name;
+									document.getElementById('description_curso').value = JSONCurso[i].description;
+									
+
+								}
+
+
+
+
+							};
+
+});//fin onchange #buscar_editar
+
+
+
+});//fin  $(function() {
+
+
+
+        }// fin de success
+
+    });// fin function ajax
+
+
+});//$("#id2").on('keypress', function () {
+
+
+     $("#curso_registrar").on('click', function () {
+
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo base_url() ?>aulas/registrar_curso',
+			data: {
+
+				code: document.getElementById('code_curso').value,
+				name: document.getElementById('name_curso').value,
+				description: document.getElementById('description_curso').value
+				
+			},
+
+			success: function( data ) {
+
+				$(function() {
+
+					alert('The course id: ' + data + ' se registro Correctamente');
+
+
+});//fin  $(function() {
+
+
+
+        }// fin de success
+
+    });// fin function ajax
+
+
+});//$("#id2").on('keypress', function () {
+
+
+
+	$("#curso_eliminar").on('click', function () {
+
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo base_url() ?>aulas/eliminar_curso',
+			data: {
+				source1: document.getElementById('code_curso').value
+			},
+
+			success: function( data ) {
+
+
+
+				$(function() {
+
+
+					if(data == 1){
+						document.getElementById('code_curso').value  = "";
+						document.getElementById('name_curso').value = "";
+						document.getElementById('description_curso').value = "";
+
+					}else{
+						alert("error al eliminar " + document.getElementById('code_curso').value);
+					}
+
+
+
+});//fin  $(function() {
+
+
+
+        }// fin de success
+
+    });// fin function ajax
+
+
+});//$("#id2").on('keypress', function () {
+
+
+	$("#curso_editar").on('click', function () {
+
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo base_url() ?>aulas/actualizar_curso',
+			data: {
+                
+                code: document.getElementById('code_curso').value,
+				name: document.getElementById('name_curso').value,
+				description: document.getElementById('description_curso').value
+			},
+
+			success: function( data ) {
+
+
+
+
+				$(function() {
+
+					alert('The course id: ' + data + ' fue actualizado Correctamente');
+
+
+});//fin  $(function() {
+
+
+
+        }// fin de success
+
+    });// fin function ajax
+
+
+});//$("#id2").on('keypress', function () {
+
+	</script>
+
+
+
+
+
+	<script >
+
+	$("#Busqueda_Grupo").on('keyup', function () {
+
+			var array_grupo = [];
+
+			$.ajax({
+				type: 'POST',
+				url: '<?php echo base_url() ?>aulas/get_grupo',
+				data: {
+					source1: document.getElementById('Busqueda_Grupo').value
+				},
+
+				success: function( data ) {
+
+
+					var JSONgrupo = eval('('+data+')');
+
+
+
+
+					$(function() {
+
+
+
+
+						for (var i = JSONgrupo.length - 1; i >= 0; i--) {
+
+
+
+
+							array_grupo[i] = JSONgrupo[i].course_id + " #" +JSONgrupo[i].group_number;
+
+
+						};
+
+
+						$( "#Busqueda_Grupo" ).autocomplete({
+
+							source: array_grupo
+
+						});
+
+
+
+						$("#obtener_grupo").on("click", function () {
+
+
+							for (var i = JSONgrupo.length - 1; i >= 0; i--) {
+
+
+								if(document.getElementById('Busqueda_Grupo').value + " #"  + JSONgrupo[i].group_number == JSONgrupo[i].course_id + " #"  + JSONgrupo[i].group_number){
+
+									document.getElementById('id_curso_grupo').value = JSONgrupo[i].course_id;
+							
+									
+
+								}
+
+
+
+
+							};
+
+});//fin onchange #buscar_editar
+
+
+
+});//fin  $(function() {
+
+
+
+        }// fin de success
+
+    });// fin function ajax
+
+
+});//$("#id2").on('keypress', function () {
+
+
+
+
+
+$("#id_prof_grupo").on('keyup', function () {
+
+			var array_profid = [];
+
+
+         
+
+
+			$.ajax({
+				type: 'POST',
+				url: '<?php echo base_url() ?>aulas/get_user/Profesor',
+				data: {
+					source1: document.getElementById('id_prof_grupo').value
+				},
+
+				success: function( data ) {
+
+
+					var JSONprofid = eval('('+data+')');
+
+
+
+
+					$(function() {
+
+
+
+
+						for (var i = JSONprofid.length - 1; i >= 0; i--) {
+
+
+
+
+							array_profid[i] = JSONprofid[i].document_number;
+
+
+						};
+
+
+						$( "#id_prof_grupo" ).autocomplete({
+
+							source: array_profid
+
+						});
+
+
+});//fin  $(function() {
+
+
+
+        }// fin de success
+
+    });// fin function ajax
+
+
+});//$("#id2").on('keypress', function () {
+
+
+
+	 $("#grupo_registrar").on('click', function () {
+
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo base_url() ?>aulas/registrar_grupo',
+			data: {
+
+				course_id: document.getElementById('id_curso_grupo').value,
+				quarter: document.getElementById('quarter').value,
+				professor_id: document.getElementById('id_prof_grupo').value,
+				enabled: document.getElementById('enable_grupo').checked,
+				number_grupo: document.getElementById('number_grupo').value
+				
+			},
+
+			success: function( data ) {
+
+				$(function() {
+
+					alert('The group id: ' + data + ' se registro Correctamente');
+
+
+});//fin  $(function() {
+
+
+
+        }// fin de success
+
+    });// fin function ajax
+
+
+});//$("#id2").on('keypress', function () {
+
+	</script>
+
+
 
 </footer>
+
 
 
 <script type="<?php echo base_url() ?>text/javascript"> Cufon.now(); </script>
@@ -503,7 +1075,10 @@
 	foreach($login as $plogin) {
 
 		echo("<script language='JavaScript' type='text/javascript'>document.getElementById('administrador').style.display = '';</script>"); 
-		
+		echo("<script language='JavaScript' type='text/javascript'>document.getElementById('Usuario').style.display = '';</script>"); 
+		echo("<script language='JavaScript' type='text/javascript'>document.getElementById('aulas').style.display = 'none';</script>"); 
+		echo("<script language='JavaScript' type='text/javascript'>document.getElementById('Cursos').style.display = 'none';</script>"); 
+		echo("<script language='JavaScript' type='text/javascript'>document.getElementById('grupos').style.display = 'none';</script>"); 
 
 		$username = "{$plogin['username']}";
 

@@ -2,16 +2,6 @@
 
 class Employee_model extends CI_Model {
 	
-	function get_employees() {
-		//$query = $this->db->get('employee');
-		$this->db
-			->select()
-			->from('employed')
-			->order_by('nombre');
-		$query = $this->db->get();
-		return $query->result_array();
-		//return $query->result();
-	}
 
 
 	function login($parametros) {
@@ -249,5 +239,158 @@ function registrar_user($type, $parametros) {
 		$this->db->where('id', $id);
 		$this->db->delete('employee');
 	}
+
+
+	// gestion de cursos
+
+
+	function registrar_curso($parametros) {
+
+	$data = array(
+				'code' => $parametros['code'],
+				'name' => $parametros['name'],
+				'description' => $parametros['description'],
+				'created_at' => date("d-m-Y h:i:s")
+
+			);
+
+		
+
+			$this->db->insert('course', $data);
+		    return $this->db->insert_id();
+
+		
+		//return $query->result();
+	}
+
+
+	function get_course($pLike) {
+
+		
+             $this->db
+			->select()
+			->from('course')
+			->limit(10, 0)
+			->where("code LIKE '%$pLike%'")
+			->order_by('code');
+
+		$query = $this->db->get();
+		return $query->result_array();
+		
+
+	}
+
+	function eliminar_course($pid) {
+
+			$query = $this->db->delete('course', array('code' => $pid));
+
+			if($query){
+
+				return 1;
+			}else{
+				return 0;
+			}	
+		
+	}
+
+function actualizar_course($parametros) {
+     	$data = array(
+				'code' => $parametros['code'],
+				'name' => $parametros['name'],
+				'description' => $parametros['description'],
+				'updated_at' => date("d-m-Y h:i:s")
+
+			);
+
+
+			
+        $this->db->where('code', $parametros['code']);
+        return $this->db->update('course', $data);
+
+
+
+
+    }
+
+
+    // gestion de grupo
+
+
+	function registrar_grupo($parametros) {
+
+		$enabled = 0;
+
+		if($parametros['enabled']=="true"){
+          $enabled = 1;
+		}
+
+	$data = array(
+				'course_id' => $parametros['course_id'],
+				'quarter' => $parametros['quarter'],
+				'professor_id' => $parametros['professor_id'],
+				'enabled' => $enabled,
+				'group_number' => $parametros['number_grupo'],
+				'created_at' => date("d-m-Y h:i:s")
+
+			);
+
+		
+
+			$this->db->insert('group', $data);
+		    return $this->db->insert_id();
+
+		
+		//return $query->result();
+	}
+
+
+	function get_grupo($pLike) {
+
+		
+             $this->db
+			->select()
+			->from('group')
+			->limit(10, 0)
+			->where("course_id LIKE '%$pLike%'")
+			->order_by('id');
+
+		$query = $this->db->get();
+		return $query->result_array();
+		
+
+	}
+
+	function eliminar_grupo($pid) {
+
+			$query = $this->db->delete('course', array('code' => $pid));
+
+			if($query){
+
+				return 1;
+			}else{
+				return 0;
+			}	
+		
+	}
+
+function actualizar_grupo($parametros) {
+     	$data = array(
+				'code' => $parametros['code'],
+				'name' => $parametros['name'],
+				'description' => $parametros['description'],
+				'updated_at' => date("d-m-Y h:i:s")
+
+			);
+
+
+			
+        $this->db->where('code', $parametros['code']);
+        return $this->db->update('course', $data);
+
+
+
+
+    }
+
 
 }

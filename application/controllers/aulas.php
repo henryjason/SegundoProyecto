@@ -102,8 +102,6 @@ function actualizar_user($type) {
 			
 
              //echo "<pre>";print_r($data);echo"</pre>";
-                
-
 	}
 
 
@@ -128,7 +126,7 @@ function actualizar_user($type) {
 		$this->load->view('register');
 	}
 
-
+//lo masseguro es que lo elimino
 	function function_register() {
 
 		$funcion = $_POST['categoria'];
@@ -175,25 +173,122 @@ function actualizar_user($type) {
 
 	}
 
-   function cargarFormulario() {
-		
-		
+  
+// gestion de cursos
+
+	function registrar_curso() {
 
 		if($_POST) {
 
-	            //redirect(base_url().'aulas');
-				$data['login'] = $this->employee_model->login($_POST);
-				$this->load->view('index', $data); 
-              // echo "<pre>";print_r($data);echo"</pre>";
+	        $data = $this->employee_model->registrar_curso($_POST);
+				 
+			echo "$data";
                 
-		    }else{$this->load->view('login');}
+		    }
+			
+
+             //echo "<pre>";print_r($data);echo"</pre>";
+       }
+
+	function get_curso() {
+
+		$plike = $_POST['source1'];
+
+                  
+	           
+			$data['curso'] = $this->employee_model->get_course($plike);
+				 
+			echo json_encode($data['curso']) ;
+
+              //echo "<pre>";print_r($data);echo"</pre>";
+     }
+
+function eliminar_curso() {
+
+		$id = $_POST['source1'];
+
+                  
+	           
+			$data = $this->employee_model->eliminar_course($id);
+				 
+			echo "$data";
+
+             //echo "<pre>";print_r($data);echo"</pre>";
+                
 
 	}
 
+function actualizar_curso() {
+
+		if($_POST) {
+
+	        $data = $this->employee_model->actualizar_course($_POST);
+				 
+			echo "$data";
+                
+		    }
+			
+
+             //echo "<pre>";print_r($data);echo"</pre>";
+	}
 
 
+// gestion de Grupo
 
+	function registrar_grupo() {
 
+		if($_POST) {
 
+	        $data = $this->employee_model->registrar_grupo($_POST);
+				 
+			echo "$data";
+                
+		    }
+			
+
+             //echo "<pre>";print_r($data);echo"</pre>";
+       }
+
+	function get_grupo() {
+
+		$plike = $_POST['source1'];
+
+                  
+	           
+			$data['grupo'] = $this->employee_model->get_grupo($plike);
+				 
+			echo json_encode($data['grupo']) ;
+
+              //echo "<pre>";print_r($data);echo"</pre>";
+     }
+
+function eliminar_grupo() {
+
+		$id = $_POST['source1'];
+
+                  
+	           
+			$data = $this->employee_model->eliminar_course($id);
+				 
+			echo "$data";
+
+             //echo "<pre>";print_r($data);echo"</pre>";
+                
+
+	}
+
+function actualizar_grupo() {
+
+		if($_POST) {
+
+	        $data = $this->employee_model->actualizar_course($_POST);
+				 
+			echo "$data";
+                
+		    }
+			
+
+             //echo "<pre>";print_r($data);echo"</pre>";
+	}
 
 }
