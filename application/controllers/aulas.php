@@ -268,7 +268,7 @@ function eliminar_grupo() {
 
                   
 	           
-			$data = $this->employee_model->eliminar_course($id);
+			$data = $this->employee_model->eliminar_grupo($id);
 				 
 			echo "$data";
 
@@ -281,7 +281,67 @@ function actualizar_grupo() {
 
 		if($_POST) {
 
-	        $data = $this->employee_model->actualizar_course($_POST);
+	        $data = $this->employee_model->actualizar_grupo($_POST);
+				 
+			echo "$data";
+                
+		    }
+			
+
+             //echo "<pre>";print_r($data);echo"</pre>";
+	}
+
+
+
+	// gestion de aula
+
+	function registrar_aula() {
+
+		if($_POST) {
+
+	        $data = $this->employee_model->registrar_aula($_POST);
+				 
+			echo "$data";
+                
+		    }
+			
+
+             //echo "<pre>";print_r($data);echo"</pre>";
+       }
+
+	function get_aula() {
+
+		$plike = $_POST['source1'];
+
+                  
+	           
+			$data['aula'] = $this->employee_model->get_aula($plike);
+				 
+			echo json_encode($data['aula']) ;
+
+              //echo "<pre>";print_r($data);echo"</pre>";
+     }
+
+function eliminar_aula() {
+
+		$id = $_POST['source1'];
+
+                  
+	           
+			$data = $this->employee_model->eliminar_aula($id);
+				 
+			echo "$data";
+
+             //echo "<pre>";print_r($data);echo"</pre>";
+                
+
+	}
+
+function actualizar_aula() {
+
+		if($_POST) {
+
+	        $data = $this->employee_model->actualizar_aula($_POST);
 				 
 			echo "$data";
                 

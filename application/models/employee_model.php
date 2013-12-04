@@ -362,7 +362,7 @@ function actualizar_course($parametros) {
 
 	function eliminar_grupo($pid) {
 
-			$query = $this->db->delete('course', array('code' => $pid));
+			$query = $this->db->delete('group', array('id' => $pid));
 
 			if($query){
 
@@ -374,10 +374,99 @@ function actualizar_course($parametros) {
 	}
 
 function actualizar_grupo($parametros) {
+
+	$enabled = 0;
+
+		if($parametros['enabled']=="true"){
+          $enabled = 1;
+		}
+
+     	$data = array(
+			    'course_id' => $parametros['course_id'],
+				'quarter' => $parametros['quarter'],
+				'professor_id' => $parametros['professor_id'],
+				'enabled' => $enabled,
+				'group_number' => $parametros['number_grupo'],
+				'updated_at' => date("d-m-Y h:i:s")
+
+			);
+
+
+			
+        $this->db->where('id', $parametros['id']);
+        return $this->db->update('group', $data);
+
+
+
+
+    }
+
+
+
+
+// gestion de aulas
+
+
+	function registrar_aula($parametros) {
+
+		
+
+	$data = array(
+				'code' => $parametros['code'],
+				'numero' => $parametros['numero'],
+				'name' => $parametros['name'],
+				'ubicacion' => $parametros['ubicacion'],
+				'created_at' => date("d-m-Y h:i:s")
+
+			);
+
+		
+
+			$this->db->insert('aula', $data);
+		    return $this->db->insert_id();
+
+		
+		//return $query->result();
+	}
+
+
+	function get_aula($pLike) {
+
+		
+             $this->db
+			->select()
+			->from('aula')
+			->limit(10, 0)
+			->where("code LIKE '%$pLike%'")
+			->order_by('id');
+
+		$query = $this->db->get();
+		return $query->result_array();
+		
+
+	}
+
+	function eliminar_aula($pid) {
+
+			$query = $this->db->delete('aula', array('code' => $pid));
+
+			if($query){
+
+				return 1;
+			}else{
+				return 0;
+			}	
+		
+	}
+
+function actualizar_aula($parametros) {
+
+		
      	$data = array(
 				'code' => $parametros['code'],
+				'numero' => $parametros['numero'],
 				'name' => $parametros['name'],
-				'description' => $parametros['description'],
+				'ubicacion' => $parametros['ubicacion'],
 				'updated_at' => date("d-m-Y h:i:s")
 
 			);
@@ -385,12 +474,11 @@ function actualizar_grupo($parametros) {
 
 			
         $this->db->where('code', $parametros['code']);
-        return $this->db->update('course', $data);
+        return $this->db->update('aula', $data);
 
 
 
 
     }
-
 
 }

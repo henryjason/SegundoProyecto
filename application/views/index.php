@@ -216,10 +216,88 @@
 
 									<div id="aulas">
 
-										Hola Aulas
+										<div class="container">
 
 
-									</div>
+											<div class="row">
+
+
+												<div class="col-md-4 col-md-offset-4">
+
+
+													<div class="panel panel-default">
+
+
+
+														<div class="panel-heading">
+															<h3 class="panel-title">Gestion de Aulas</h3>
+														</div>
+														<div class="panel-body">
+
+
+
+
+															<form class="form-horizontal"  action="<?php echo base_url() ?>aulas/function_register" method="post" >
+																<fieldset>
+
+
+																	<!-- document input-->
+																	<div class="control-group">
+																		
+																		Code : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input id="code_aula" type="text" placeholder="Code Aula"
+																		class="input-xlarge"><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button"  value="Obtener" id="obtener_aula" >
+																		<p class="help-block"></p>
+																	</div><br>
+
+
+																	<!-- name input-->
+																	<div class="control-group">
+																	
+																		Name: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input id="name_aula"  type="text" placeholder="Nombre Aula"
+																		class="input-xlarge">
+																		<p class="help-block"></p>
+																	</div><br>
+
+																	<!-- last name input-->
+																	<div class="control-group">
+																		
+																		Número: <input id="numero_aula" type="text" placeholder="Numero"
+																		class="input-xlarge">
+																		<p class="help-block"></p>
+																	</div><br>
+
+																	<!-- last name input-->
+																	<div class="control-group">
+																		
+																		Ubicacion: <input id="ubicacion_aula" type="text" placeholder="Ubicacion"
+																		class="input-xlarge">
+																		<p class="help-block"></p>
+																	</div><br>
+
+																	
+																</fieldset>
+																<input  type="button"  value="Registrar" id="aula_registrar">
+																<input  type="button"  value="Editar" id="aula_editar">
+																<input  type="button"  value="Eliminar" id="aula_eliminar">
+																
+															</form>
+
+
+
+														</div>
+													</div>
+												</div> <!--<div class="col-md-4 col-md-offset-4">-->
+
+
+
+
+
+											</div>
+
+										</div>	<!--contenedor Aulas-->
+
+
+									</div>  <!--fin div aulas-->
 
 
 									<div id="Cursos">
@@ -330,7 +408,7 @@
 																	<!-- document input-->
 																	<div class="control-group">
 																		
-																		Buscar Grupo: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input id="Busqueda_Grupo" type="text" placeholder="serch word"
+																		Buscar Grupo: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input id="Busqueda_Grupo" type="text" placeholder="serch group"
 																		class="input-xlarge"><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button"  value="Obtener" id="obtener_grupo" >
 																		<p class="help-block"></p>
 																	</div><br>
@@ -348,7 +426,13 @@
 																		</select>
 																	</div><br>
 
-
+                                                                    <!-- document input-->
+																	<div class="control-group">
+																		
+																		ID Grupo: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input id="id_grupo" type="text" placeholder="ID"
+																		class="input-xlarge" disabled>
+																		<p class="help-block"></p>
+																	</div><br>
 
 																	<!-- document input-->
 																	<div class="control-group">
@@ -926,10 +1010,13 @@
 							for (var i = JSONgrupo.length - 1; i >= 0; i--) {
 
 
-								if(document.getElementById('Busqueda_Grupo').value + " #"  + JSONgrupo[i].group_number == JSONgrupo[i].course_id + " #"  + JSONgrupo[i].group_number){
-
+								if(document.getElementById('Busqueda_Grupo').value == JSONgrupo[i].course_id + " #"  + JSONgrupo[i].group_number){
+                                     
+                                     document.getElementById('id_grupo').value = JSONgrupo[i].id;
 									document.getElementById('id_curso_grupo').value = JSONgrupo[i].course_id;
-							
+									document.getElementById('id_prof_grupo').value = JSONgrupo[i].professor_id;
+							        document.getElementById('number_grupo').value = JSONgrupo[i].group_number;
+							        document.getElementById('quarter').value = JSONgrupo[i].quarter;
 									
 
 								}
@@ -1050,9 +1137,285 @@ $("#id_prof_grupo").on('keyup', function () {
 
 });//$("#id2").on('keypress', function () {
 
+
+
+
+	$("#grupo_eliminar").on('click', function () {
+
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo base_url() ?>aulas/eliminar_grupo',
+			data: {
+				source1: document.getElementById('id_grupo').value
+			},
+
+			success: function( data ) {
+
+
+
+				$(function() {
+
+
+					if(data == 1){
+                document.getElementById('Busqueda_Grupo').value = "";
+				document.getElementById('id_curso_grupo').value = "";
+				document.getElementById('quarter').value = "";
+				document.getElementById('id_prof_grupo').value = "";
+				document.getElementById('enable_grupo').checked = false;
+				document.getElementById('number_grupo').value = "";
+				document.getElementById('id_grupo').value = "";
+
+					}else{
+						alert("error al eliminar " + document.getElementById('id_grupo').value);
+					}
+
+
+
+});//fin  $(function() {
+
+
+
+        }// fin de success
+
+    });// fin function ajax
+
+
+});//$("#id2").on('keypress', function () 
+
+$("#grupo_editar").on('click', function () {
+
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo base_url() ?>aulas/actualizar_grupo',
+			data: {
+                
+                course_id: document.getElementById('id_curso_grupo').value,
+				quarter: document.getElementById('quarter').value,
+				professor_id: document.getElementById('id_prof_grupo').value,
+				enabled: document.getElementById('enable_grupo').checked,
+				number_grupo: document.getElementById('number_grupo').value,
+				id: document.getElementById('id_grupo').value
+			},
+
+			success: function( data ) {
+
+
+
+
+				$(function() {
+
+					alert('The grupo id: ' + data + ' fue actualizado Correctamente');
+
+
+});//fin  $(function() {
+
+
+
+        }// fin de success
+
+    });// fin function ajax
+
+
+});//$("#id2").on('keypress', function () {
+
 	</script>
 
 
+
+
+<script >
+
+$("#aula_registrar").on('click', function () {
+
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo base_url() ?>aulas/registrar_aula',
+			data: {
+
+				code: document.getElementById('code_aula').value,
+				numero: document.getElementById('numero_aula').value,
+				name: document.getElementById('name_aula').value,
+				ubicacion: document.getElementById('ubicacion_aula').value
+				
+			},
+
+			success: function( data ) {
+
+				$(function() {
+
+					alert('The Aula id: ' + data + ' se registro Correctamente');
+
+
+});//fin  $(function() {
+
+
+
+        }// fin de success
+
+    });// fin function ajax
+
+
+});//$("#id2").on('keypress', function () {
+
+
+	$("#code_aula").on('keyup', function () {
+
+			var array_code = [];
+
+
+         
+
+
+			$.ajax({
+				type: 'POST',
+				url: '<?php echo base_url() ?>aulas/get_aula',
+				data: {
+					source1: document.getElementById('code_aula').value
+				},
+
+				success: function( data ) {
+
+
+					var JSONcode = eval('('+data+')');
+
+
+
+
+					$(function() {
+
+
+
+
+						for (var i = JSONcode.length - 1; i >= 0; i--) {
+
+
+
+
+							array_code[i] = JSONcode[i].code;
+
+
+						};
+
+
+						$( "#code_aula" ).autocomplete({
+
+							source: array_code
+
+
+						});
+
+						$("#obtener_aula").on("click", function () {
+
+
+							for (var i = JSONcode.length - 1; i >= 0; i--) {
+
+
+								if(document.getElementById('code_aula').value == JSONcode[i].code){
+                                     
+                                     document.getElementById('name_aula').value = JSONcode[i].name;
+									document.getElementById('numero_aula').value = JSONcode[i].numero;
+									document.getElementById('ubicacion_aula').value = JSONcode[i].ubicacion;
+							        
+									
+
+								}
+
+
+
+
+							};
+
+});//fin onchange #buscar_editar
+
+
+});//fin  $(function() {
+
+
+
+        }// fin de success
+
+    });// fin function ajax
+
+
+});//$("#id2").on('keypress', function () {
+
+	$("#aula_eliminar").on('click', function () {
+
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo base_url() ?>aulas/eliminar_aula',
+			data: {
+				source1: document.getElementById('code_aula').value
+			},
+
+			success: function( data ) {
+
+
+
+				$(function() {
+
+
+					if(data == 1){
+						document.getElementById('code_aula').value = "";
+               document.getElementById('name_aula').value = "";
+									document.getElementById('numero_aula').value = "";
+									document.getElementById('ubicacion_aula').value = "";
+
+					}else{
+						alert("error al eliminar " + document.getElementById('code_aula').value);
+					}
+
+
+
+});//fin  $(function() {
+
+
+
+        }// fin de success
+
+    });// fin function ajax
+
+
+});//$("#id2").on('keypress', function () 
+
+
+
+$("#aula_editar").on('click', function () {
+
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo base_url() ?>aulas/actualizar_aula',
+			data: {
+                
+               code: document.getElementById('code_aula').value,
+				numero: document.getElementById('numero_aula').value,
+				name: document.getElementById('name_aula').value,
+				ubicacion: document.getElementById('ubicacion_aula').value
+
+			},
+
+			success: function( data ) {
+
+
+
+
+				$(function() {
+
+					alert('The aula id: ' + data + ' fue actualizado Correctamente');
+
+
+});//fin  $(function() {
+
+
+
+        }// fin de success
+
+    });// fin function ajax
+
+
+});//$("#id2").on('keypress', function () {
+
+</script>
 
 </footer>
 
