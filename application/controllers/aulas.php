@@ -40,6 +40,20 @@ class aulas extends CI_Controller {
 	
 
 
+	function login_new($type) {
+
+		
+	           
+			$data['login1'] = $this->employee_model->login_new($type, $_POST);
+				 
+			echo json_encode($data['login1']) ;
+
+              //echo "<pre>";print_r($data);echo"</pre>";
+                
+
+	}
+
+
 	function get_user($type) {
 
 		$plike = $_POST['source1'];

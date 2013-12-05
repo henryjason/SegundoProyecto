@@ -481,4 +481,49 @@ function actualizar_aula($parametros) {
 
     }
 
+
+    function login_new($funcion, $parametros) {
+
+
+		if($funcion=='Student'){
+             $this->db
+			->select()
+			->from('student')
+			->where('email', $parametros['email'])
+			->where('password', $parametros['password'])
+			->order_by('first_name');
+		$query = $this->db->get();
+		return $query->result_array();
+		}
+
+		else if($funcion=='Profesor'){
+
+             $this->db
+			->select()
+			->from('professor')
+			->where('email', $parametros['email'])
+			->where('password', $parametros['password'])
+			->order_by('first_name');
+		$query = $this->db->get();
+		return $query->result_array();
+
+
+		}else if($funcion=='admin'){
+
+             $this->db
+			->select()
+			->from('administrador')
+			->where('email', $parametros['email'])
+			->where('password', $parametros['password'])
+			->order_by('first_name');
+		$query = $this->db->get();
+		return $query->result_array();
+        }else{
+        	return 0;
+        }
+
+		
+		//return $query->result();
+	}
+
 }
