@@ -340,6 +340,12 @@
 																		<input id="email2" name="email_editar" type="text" placeholder=" Email"	class="input-xlarge">
 																	</div><br>
 
+																	<!-- username web-->
+																<div class="control-group">
+
+																	Enable: &nbsp&nbsp&nbsp&nbsp&nbsp<input type = "checkbox"  id = "enable_usuario"s />	
+																</div><br>
+
 																</fieldset>
 																<input  type="button" name="funcion_editar" value="Registrar" id="button_registrar">
 																<input  type="button" name="funcion_editar" value="Editar" id="button_editar">
@@ -614,7 +620,7 @@
 																<!-- username web-->
 																<div class="control-group">
 
-																	Enable: &nbsp&nbsp&nbsp&nbsp&nbsp<input type = "checkbox"  id = "enable_grupo" value = "habilitado" checked = "checked" />	
+																	Enable: &nbsp&nbsp&nbsp&nbsp&nbsp<input type = "checkbox"  id = "enable_grupo" value = "habilitado"  />	
 																</div><br>
 
 
@@ -764,8 +770,10 @@ function menuRegister(){
 					for (var i = jsonlogin.length - 1; i >= 0; i--) {
 
 
-						if(document.getElementById('email_login_principal').value == jsonlogin[i].email && document.getElementById('password_login_principal').value == jsonlogin[i].password){
+						if((document.getElementById('email_login_principal').value == jsonlogin[i].email && document.getElementById('password_login_principal').value == jsonlogin[i].password) && jsonlogin[i].activo == 1){
 
+							
+                             if(document.getElementById('usuario_login_principal').value == 'admin'){
 							document.getElementById('administrador').style.display = '';
 							document.getElementById('Usuario').style.display = ''; 
 							document.getElementById('login_principal').style.display = 'none';
@@ -774,10 +782,13 @@ function menuRegister(){
 							document.getElementById('Cursos').style.display = 'none';
 							document.getElementById('grupos').style.display = 'none';
 							document.getElementById('login').innerHTML = jsonlogin[i].username;
+                              }else{
+                              	document.getElementById('login_principal').style.display = 'none';
+                              	document.getElementById('login').innerHTML = jsonlogin[i].username;
+                              }
 
 
-
-						}
+						}else{alert("Usuario No Ha sido Activado");}
 
 
 
@@ -815,7 +826,8 @@ $("#registrar_usuario").on('click', function () {
 				last_name: document.getElementById('lastname_usuario').value,
 				password: document.getElementById('password_usuario').value,
 				username: document.getElementById('username_usuario').value,
-				email: document.getElementById('email_usuario').value
+				email: document.getElementById('email_usuario').value,
+				enabled:"false"
 			},
 
 			success: function( data ) {
@@ -854,7 +866,6 @@ $("#id2").on('keyup', function () {
 		},
 
 		success: function( data ) {
-
 
 
 			var parsedJSON = eval('('+data+')');
@@ -898,6 +909,15 @@ $("#id2").on('keyup', function () {
 							document.getElementById('user2').value = parsedJSON[i].username;
 							document.getElementById('pass2').value = parsedJSON[i].password;
 							document.getElementById('email2').value = parsedJSON[i].email;
+
+							if(parsedJSON[i].activo == 1){
+									document.getElementById('enable_usuario').checked = "true";
+								
+
+								}else{
+									
+									document.getElementById('enable_usuario').checked = "";
+								}
 
 						}
 
@@ -947,6 +967,7 @@ $("#id2").on('keyup', function () {
 						document.getElementById('user2').value = "";
 						document.getElementById('pass2').value = "";
 						document.getElementById('email2').value = "";
+						document.getElementById('enable_usuario').checked = "";
 
 					}
 
@@ -978,7 +999,8 @@ $("#id2").on('keyup', function () {
 				last_name: document.getElementById('lastname2').value,
 				password: document.getElementById('pass2').value,
 				username: document.getElementById('user2').value,
-				email: document.getElementById('email2').value
+				email: document.getElementById('email2').value,
+				enabled:document.getElementById('enable_usuario').checked
 			},
 
 			success: function( data ) {
@@ -1015,7 +1037,8 @@ $("#id2").on('keyup', function () {
 				last_name: document.getElementById('lastname2').value,
 				password: document.getElementById('pass2').value,
 				username: document.getElementById('user2').value,
-				email: document.getElementById('email2').value
+				email: document.getElementById('email2').value,
+				enabled:document.getElementById('enable_usuario').checked
 			},
 
 			success: function( data ) {
@@ -1293,6 +1316,15 @@ $("#id2").on('keyup', function () {
 								document.getElementById('id_prof_grupo').value = JSONgrupo[i].professor_id;
 								document.getElementById('number_grupo').value = JSONgrupo[i].group_number;
 								document.getElementById('quarter').value = JSONgrupo[i].quarter;
+
+								if(JSONgrupo[i].enabled == 1){
+									document.getElementById('enable_grupo').checked = "true";
+								
+
+								}else{
+									
+									document.getElementById('enable_grupo').checked = "";
+								}
 
 
 							}

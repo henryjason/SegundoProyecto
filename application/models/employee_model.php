@@ -141,12 +141,19 @@ function eliminar_user($type, $pid) {
 	
 function registrar_user($type, $parametros) {
 
+	$enabled = 0;
+
+		if($parametros['enabled']=="true"){
+          $enabled = 1;
+		}
+
 	$data = array(
 				'document_number' => $parametros['ID'],
 				'first_name' => $parametros['name'],
 				'last_name' => $parametros['last_name'],
 				'password' => $parametros['password'],
 				'username' => $parametros['username'],
+				'activo' => $enabled,
 				'email' => $parametros['email'],
 				'created_at' => date("d-m-Y h:i:s")
 
@@ -177,12 +184,20 @@ function registrar_user($type, $parametros) {
 
 
     function actualizar_user($type, $parametros) {
+
+         $enabled = 0;
+
+		if($parametros['enabled']=="true"){
+          $enabled = 1;
+		}
+
        $data = array(
 				'document_number' => $parametros['ID'],
 				'first_name' => $parametros['name'],
 				'last_name' => $parametros['last_name'],
 				'password' => $parametros['password'],
 				'username' => $parametros['username'],
+				'activo' => $enabled,
 				'email' => $parametros['email'],
 				'updated_at' => date("d-m-Y h:i:s")
 

@@ -96,10 +96,6 @@ class aulas extends CI_Controller {
 			echo "$data";
                 
 		    }
-			
-
-             //echo "<pre>";print_r($data);echo"</pre>";
-                
 
 	}
 
